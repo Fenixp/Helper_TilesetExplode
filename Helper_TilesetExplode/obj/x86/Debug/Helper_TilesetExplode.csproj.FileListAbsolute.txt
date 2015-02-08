@@ -1,0 +1,15 @@
+C:\Users\David\Documents\GitHub\Helper_TilesetExplode\Helper_TilesetExplode\bin\WindowsGL\Debug\SDL.dll
+C:\Users\David\Documents\GitHub\Helper_TilesetExplode\Helper_TilesetExplode\bin\WindowsGL\Debug\Lidgren.Network.dll
+C:\Users\David\Documents\GitHub\Helper_TilesetExplode\Helper_TilesetExplode\bin\WindowsGL\Debug\MonoGame.Framework.dll
+C:\Users\David\Documents\GitHub\Helper_TilesetExplode\Helper_TilesetExplode\bin\WindowsGL\Debug\OpenTK.dll
+C:\Users\David\Documents\GitHub\Helper_TilesetExplode\Helper_TilesetExplode\bin\WindowsGL\Debug\Tao.Sdl.dll
+C:\Users\David\Documents\GitHub\Helper_TilesetExplode\Helper_TilesetExplode\obj\x86\Debug\Helper_TilesetExplode.csprojResolveAssemblyReference.cache
+C:\Users\David\Documents\GitHub\Helper_TilesetExplode\Helper_TilesetExplode\obj\x86\Debug\Helper_TilesetExplode.exe
+C:\Users\David\Documents\GitHub\Helper_TilesetExplode\Helper_TilesetExplode\obj\x86\Debug\Helper_TilesetExplode.pdb
+C:\Users\David\Documents\GitHub\Helper_TilesetExplode\Helper_TilesetExplode\bin\WindowsGL\Debug\Helper_TilesetExplode.exe
+C:\Users\David\Documents\GitHub\Helper_TilesetExplode\Helper_TilesetExplode\bin\WindowsGL\Debug\Helper_TilesetExplode.pdb
+C:\Users\David\Documents\GitHub\Helper_TilesetExplode\Helper_TilesetExplode\bin\WindowsGL\Debug\Content\ChomperMazeTiles.png
+C:\Users\David\Documents\GitHub\Helper_TilesetExplode\Helper_TilesetExplode\bin\WindowsGL\Debug\Content\ChomperMazeTiles.txt
+C:\Users\David\Documents\GitHub\Helper_TilesetExplode\Helper_TilesetExplode\bin\WindowsGL\Debug\Content\ChomperSprites.png
+C:\Users\David\Documents\GitHub\Helper_TilesetExplode\Helper_TilesetExplode\bin\WindowsGL\Debug\Content\ChomperSprites.txt
+C:\Users\David\Documents\GitHub\Helper_TilesetExplode\Helper_TilesetExplode\bin\WindowsGL\Debug\Content\font.xnb
