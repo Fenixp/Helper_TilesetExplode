@@ -6,17 +6,28 @@ using System.IO;
 using System.Linq;
 using System.Text;
 
-namespace Helper_TilesetExplode.TilesetReaderN
+namespace CommonLib.Common
 {
     public static class TilesetReader
     {
-        public static ContentManager Content;
-
         public static string ListsFolder = String.Empty;
 
         private static Dictionary<string, Dictionary<string, TileInfo>> _tilesets = new Dictionary<string, Dictionary<string, TileInfo>>();
 
         public static TileInfo GetSprite(string tileset, string spriteName)
+        {
+            TileInfo info = TryGetSprite(tileset, spriteName);
+            if (info == null)
+            {
+                throw new Exception("SpriteName unknown");
+            }
+            else
+            {
+                return info;
+            }
+        }
+
+        public static TileInfo TryGetSprite(string tileset, string spriteName)
         {
             if (_tilesets.ContainsKey(tileset))
             {
@@ -26,13 +37,13 @@ namespace Helper_TilesetExplode.TilesetReaderN
                 }
                 else
                 {
-                    throw new Exception("SpriteName unknown");
+                    return null;
                 }
             }
             else
             {
                 ReadTileset(tileset);
-                return GetSprite(tileset, spriteName);
+                return TryGetSprite(tileset, spriteName);
             }
         }
 
@@ -49,6 +60,26 @@ namespace Helper_TilesetExplode.TilesetReaderN
             }
         }
 
+        public static List<TileInfo> GetAnimation(string tileset, string animationName)
+        {
+            int i = 1;
+            TileInfo info = TryGetSprite(tileset, animationName + (i++).ToString());
+            List<TileInfo> infos = new List<TileInfo>();
+
+            while(info != null)
+            {
+                infos.Add(info);
+                info = TryGetSprite(tileset, animationName + (i++).ToString());
+            }
+
+            if (infos.Count == 0)
+            {
+                throw new Exception("AnimationName unknown"); 
+            }
+
+            return infos;
+        }
+
         private static void ReadTileset(string tileset)
         {
             List<string> Lines = ReadLines(tileset);
@@ -60,7 +91,7 @@ namespace Helper_TilesetExplode.TilesetReaderN
             }
 
             Lines.RemoveAt(0);
-            _tilesets.Add(tileset, ProcessLines(Lines, FileName.Item2, Content.Load<Texture2D>(FileName.Item1)));
+            _tilesets.Add(tileset, ProcessLines(Lines, FileName.Item2, ContentSettings.Content.Load<Texture2D>(FileName.Item1)));
         }
 
         private static Dictionary<string, TileInfo> ProcessLines(IEnumerable<string> Lines, int tileSize, Texture2D tileSet)
@@ -72,7 +103,7 @@ namespace Helper_TilesetExplode.TilesetReaderN
             {
                 SpriteInfo = TrySplitSprite(str);
 
-                Tiles.Add(SpriteInfo.Item3, new TileInfo(tileSize, SpriteInfo.Item1, SpriteInfo.Item2, tileSet));
+                Tiles.Add(SpriteInfo.Item3, new TileInfo(SpriteInfo.Item3, tileSize, SpriteInfo.Item1, SpriteInfo.Item2, tileSet));
             }
 
             return Tiles;

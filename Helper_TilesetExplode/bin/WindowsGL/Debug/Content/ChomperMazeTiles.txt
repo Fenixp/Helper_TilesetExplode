@@ -22,10 +22,10 @@ ChomperMazeTiles.png:32
 6 2 LowerVertical
 7 0 LeftHorizontal
 7 1 Fill
-7 2 BigDotDark
+7 2 BigDot1
 8 0 MiddleHorizontal
 8 1 BlackOne
-8 2 BigDotLight
+8 2 BigDot2
 9 0 RightHorizontal
 9 1 BlackTwo
 9 2 SmallDot

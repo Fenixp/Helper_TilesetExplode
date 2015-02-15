@@ -6,7 +6,7 @@ using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Storage;
-using Helper_TilesetExplode.TilesetReaderN;
+using CommonLib.Common;
 #endregion
 
 namespace Helper_TilesetExplode
@@ -72,6 +72,7 @@ namespace Helper_TilesetExplode
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
             font = Content.Load<SpriteFont>("font");
+            //List<TileInfo> anim = TilesetReader.GetAnimation("ChomperSprites", "YellowRight");
             // TODO: use this.Content to load your game content here
         }
 
