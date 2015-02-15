@@ -36,7 +36,7 @@ namespace Helper_TilesetExplode
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
             TilesetReader.ListsFolder = Content.RootDirectory;
-            TilesetReader.Content = Content;
+            ContentSettings.Content = Content;
         }
 
         /// <summary>
