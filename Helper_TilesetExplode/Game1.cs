@@ -35,7 +35,6 @@ namespace Helper_TilesetExplode
         {
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
-            TilesetReader.ListsFolder = Content.RootDirectory;
             ContentSettings.Content = Content;
         }
 
@@ -152,7 +151,7 @@ namespace Helper_TilesetExplode
         {
             Vector2 stringSize = font.MeasureString(info.Key);
 
-            if (cursorPosition.X + stringSize.X > WINXSIZE || cursorPosition.X + info.Value.TileSize > WINXSIZE)
+            if (cursorPosition.X + stringSize.X > WINXSIZE || cursorPosition.X + info.Value.Rectangle.Width > WINXSIZE)
             {
                 cursorPosition.X = 0;
                 cursorPosition.Y += lineSize + 10;
@@ -163,17 +162,17 @@ namespace Helper_TilesetExplode
                     info.Key,
                     info.Value,
                     cursorPosition,
-                    new Vector2(cursorPosition.X, cursorPosition.Y + info.Value.TileSize + 5)
+                    new Vector2(cursorPosition.X, cursorPosition.Y + info.Value.Rectangle.Height + 5)
                 ));
 
-            if (lineSize < stringSize.Y + info.Value.TileSize + 5)
+            if (lineSize < stringSize.Y + info.Value.Rectangle.Height + 5)
             {
-                lineSize = stringSize.Y + info.Value.TileSize + 5;
+                lineSize = stringSize.Y + info.Value.Rectangle.Height + 5;
             }
 
-            if (stringSize.X < info.Value.TileSize)
+            if (stringSize.X < info.Value.Rectangle.Width)
             {
-                cursorPosition.X += (info.Value.TileSize + 10);
+                cursorPosition.X += (info.Value.Rectangle.Height + 10);
             }
             else
             {

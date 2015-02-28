@@ -15,3 +15,5 @@ C:\Users\David\Documents\GitHub\Helper_TilesetExplode\Helper_TilesetExplode\bin\
 C:\Users\David\Documents\GitHub\Helper_TilesetExplode\Helper_TilesetExplode\bin\WindowsGL\Debug\Content\font.xnb
 C:\Users\David\Documents\GitHub\Helper_TilesetExplode\Helper_TilesetExplode\bin\WindowsGL\Debug\CommonLib.dll
 C:\Users\David\Documents\GitHub\Helper_TilesetExplode\Helper_TilesetExplode\bin\WindowsGL\Debug\CommonLib.pdb
+C:\Users\David\Documents\GitHub\Helper_TilesetExplode\Helper_TilesetExplode\bin\WindowsGL\Debug\ContentReader.dll
+C:\Users\David\Documents\GitHub\Helper_TilesetExplode\Helper_TilesetExplode\bin\WindowsGL\Debug\ContentReader.pdb

@@ -10,6 +10,5 @@ C:\Users\David\Documents\GitHub\Helper_TilesetExplode\CommonLib\bin\Debug\SharpD
 C:\Users\David\Documents\GitHub\Helper_TilesetExplode\CommonLib\bin\Debug\SharpDX.Direct3D11.xml
 C:\Users\David\Documents\GitHub\Helper_TilesetExplode\CommonLib\bin\Debug\SharpDX.XAudio2.xml
 C:\Users\David\Documents\GitHub\Helper_TilesetExplode\CommonLib\bin\Debug\SharpDX.DXGI.xml
-C:\Users\David\Documents\GitHub\Helper_TilesetExplode\CommonLib\obj\Debug\CommonLib.csprojResolveAssemblyReference.cache
 C:\Users\David\Documents\GitHub\Helper_TilesetExplode\CommonLib\obj\Debug\CommonLib.dll
 C:\Users\David\Documents\GitHub\Helper_TilesetExplode\CommonLib\obj\Debug\CommonLib.pdb

@@ -9,23 +9,15 @@ namespace CommonLib.Common
 {
     public class TileInfo
     {
-        int _tileSize;
-        int _xCoord;
-        int _yCoord;
         Texture2D _texture;
         Rectangle _rectangle;
         string _name;
 
-        public TileInfo(string name, int size, int xCoord, int yCoord, Texture2D texture)
+        public TileInfo(string name, Rectangle size, Texture2D texture)
         {
-            _tileSize = size;
-            _xCoord = xCoord;
-            _yCoord = yCoord;
             _texture = texture;
             _name = name;
-
-            _rectangle = new Rectangle(_xCoord * _tileSize, _yCoord * _tileSize, _tileSize, _tileSize);
-            
+            _rectangle = size;
         }
 
         public string Name
@@ -36,25 +28,9 @@ namespace CommonLib.Common
             }
         }
 
-        public int XCoord
-        {
-            get
-            {
-                return _xCoord;
-            }
-        }
-
-        public int YCoord
-        {
-            get
-            {
-                return _yCoord;
-            }
-        }
-
         public Texture2D Texture
         {
-            get 
+            get
             {
                 return _texture;
             }
@@ -65,14 +41,6 @@ namespace CommonLib.Common
             get
             {
                 return _rectangle;
-            }
-        }
-
-        public int TileSize
-        {
-            get
-            {
-                return _tileSize;
             }
         }
     }

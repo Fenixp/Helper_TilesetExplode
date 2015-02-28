@@ -1,4 +1,5 @@
-﻿using Microsoft.Xna.Framework.Content;
+﻿using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 using System;
 using System.Collections.Generic;
@@ -10,7 +11,7 @@ namespace CommonLib.Common
 {
     public static class TilesetReader
     {
-        public static string ListsFolder = String.Empty;
+        //public static string ListsFolder = String.Empty;
 
         private static Dictionary<string, Dictionary<string, TileInfo>> _tilesets = new Dictionary<string, Dictionary<string, TileInfo>>();
 
@@ -66,7 +67,7 @@ namespace CommonLib.Common
             TileInfo info = TryGetSprite(tileset, animationName + (i++).ToString());
             List<TileInfo> infos = new List<TileInfo>();
 
-            while(info != null)
+            while (info != null)
             {
                 infos.Add(info);
                 info = TryGetSprite(tileset, animationName + (i++).ToString());
@@ -74,7 +75,7 @@ namespace CommonLib.Common
 
             if (infos.Count == 0)
             {
-                throw new Exception("AnimationName unknown"); 
+                throw new Exception("AnimationName unknown");
             }
 
             return infos;
@@ -83,7 +84,7 @@ namespace CommonLib.Common
         private static void ReadTileset(string tileset)
         {
             List<string> Lines = ReadLines(tileset);
-            Tuple<string, int> FileName = TrySplitName(Lines[0]);
+            string FileName = Lines[0];
 
             if (FileName == null)
             {
@@ -91,19 +92,19 @@ namespace CommonLib.Common
             }
 
             Lines.RemoveAt(0);
-            _tilesets.Add(tileset, ProcessLines(Lines, FileName.Item2, ContentSettings.Content.Load<Texture2D>(FileName.Item1)));
+            _tilesets.Add(tileset, ProcessLines(Lines, ContentSettings.Content.Load<Texture2D>(FileName)));
         }
 
-        private static Dictionary<string, TileInfo> ProcessLines(IEnumerable<string> Lines, int tileSize, Texture2D tileSet)
+        private static Dictionary<string, TileInfo> ProcessLines(IEnumerable<string> Lines, Texture2D tileSet)
         {
-            Tuple<int, int, string> SpriteInfo;
-            Dictionary<string, TileInfo> Tiles = new Dictionary<string,TileInfo>();
+            Tuple<Rectangle, string> SpriteInfo;
+            Dictionary<string, TileInfo> Tiles = new Dictionary<string, TileInfo>();
 
             foreach (string str in Lines)
             {
                 SpriteInfo = TrySplitSprite(str);
 
-                Tiles.Add(SpriteInfo.Item3, new TileInfo(SpriteInfo.Item3, tileSize, SpriteInfo.Item1, SpriteInfo.Item2, tileSet));
+                Tiles.Add(SpriteInfo.Item2, new TileInfo(SpriteInfo.Item2, SpriteInfo.Item1, tileSet));
             }
 
             return Tiles;
@@ -115,7 +116,7 @@ namespace CommonLib.Common
             string line;
             try
             {
-                using (System.IO.StreamReader file = new System.IO.StreamReader(ListsFolder + "\\" + tileset + ".txt"))
+                using (System.IO.StreamReader file = new System.IO.StreamReader(ContentSettings.Content.RootDirectory + "\\" + tileset + ".txt"))
                 {
                     while ((line = file.ReadLine()) != null)
                     {
@@ -148,70 +149,17 @@ namespace CommonLib.Common
             }
         }
 
-        private static Tuple<int, int, string> TrySplitSprite(string fileLine)
+        private static Tuple<Rectangle, string> TrySplitSprite(string fileLine)
         {
             string[] splitted = fileLine.Split(' ');
             if (splitted.Length > 0)
             {
-                return new Tuple<int, int, string>(Int16.Parse(splitted[0]), Int16.Parse(splitted[1]), (string)splitted[2]);
+                return new Tuple<Rectangle, string>(new Rectangle(Int16.Parse(splitted[0]), Int16.Parse(splitted[1]), Int16.Parse(splitted[2]), Int16.Parse(splitted[3])), (string)splitted[4]);
             }
             else
             {
                 return null;
             }
         }
-
-        /*public static Dictionary<string, Dictionary<string, Texture2D>> TextureMaps = new Dictionary<string,Dictionary<string,Texture2D>>();
-
-        public static void ReadTextureMaps(string mapTextFile)
-        { 
-            Dictionary<string, Dictionary<string, string>> TextureMapNames = ReadFile(mapTextFile);
-        }
-
-        private static Dictionary<string, Dictionary<string, string>> ReadFile(string fileName)
-        {
-            Dictionary<string, IEnumerable<Tuple<string, int, int>>> TextureMapNames = new Dictionary<string, IEnumerable<Tuple<string, int, int>>>();
-            Tuple<string, int, int> spriteTup;
-            Tuple<string, int> fileTup;
-            List<Tuple<string, int, int>> list = new List<Tuple<string, int, int>>();
-            string line;
-            using (System.IO.StreamReader file = new System.IO.StreamReader(fileName))
-            { 
-                while((line = file.ReadLine()) != null)
-                {
-                    fileTup = TrySplitName(line);
-                    if (fileTup != null)
-                    { 
-                        
-                    }
-                }
-            }
-        }
-
-        private static Tuple<string, int> TrySplitName(string fileLine)
-        {
-            string[] splitted = fileLine.Split(':');
-            if (splitted.Length > 0)
-            {
-                return new Tuple<string, int>((string)splitted[1], Int16.Parse(splitted[2]));
-            }
-            else
-            {
-                return null;
-            }
-        }
-
-        private static Tuple<int, int, string> TrySplitSprite(string fileLine)
-        {
-            string[] splitted = fileLine.Split(' ');
-            if (splitted.Length > 0)
-            {
-                return new Tuple<int, int, string>(Int16.Parse(splitted[0]), Int16.Parse(splitted[1]), (string)splitted[2]);
-            }
-            else
-            {
-                return null;
-            }
-        }*/
     }
 }

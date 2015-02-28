@@ -1,57 +1,57 @@
-ChomperSprites.png:32
-0 0 RedRight1
-0 1 RedDown1
-0 2 RedLeft1
-0 3 RedUp1
-1 0 RedRight2
-1 1 RedDown2
-1 2 RedLeft2
-1 3 RedUp2
-2 0 YellowRight1
-2 1 YellowDown1
-2 2 YellowLeft1
-2 3 YellowUp1
-3 0 YellowRight2
-3 1 YellowDown2
-3 2 YellowLeft2
-3 3 YellowUp2
-4 0 PinkRight1
-4 1 PinkDown1
-4 2 PinkLeft1
-4 3 PinkUp1
-5 0 PinkRight2
-5 1 PinkDown2
-5 2 PinkLeft2
-5 3 PinkUp2
-6 0 GreenRight1
-6 1 GreenDown1
-6 2 GreenLeft1
-6 3 GreenUp1
-7 0 GreenRight2
-7 1 GreenDown2
-7 2 GreenLeft2
-7 3 GreenUp2
-8 0 PurpleRight1
-8 1 PurpleDown1
-8 2 PurpleLeft1
-8 3 PurpleUp1
-9 0 PurpleRight2
-9 1 PurpleDown2
-9 2 PurpleLeft2
-9 3 PurpleUp2
-10 0 PacRight1
-10 1 PacDown1
-10 2 PacLeft1
-10 3 PacUp1
-11 0 PacRight2
-11 1 PacDown2
-11 2 PacLeft2
-11 3 PacUp2
-12 0 BlueGhost1
-12 1 WhiteGhost1
-12 2 GhostEyes1
-12 3 EmptySquare
-13 0 BlueGhost2
-13 1 WhiteGhost2
-13 2 GhostEyes2
-13 3 GreySquare
+ChomperSprites.png
+0 0 32 32 RedRight1
+0 32 32 32 RedDown1
+0 64 32 32 RedLeft1
+0 96 32 32 RedUp1
+32 0 32 32 RedRight2
+32 32 32 32 RedDown2
+32 64 32 32 RedLeft2
+32 96 32 32 RedUp2
+64 0 32 32 YellowRight1
+64 32 32 32 YellowDown1
+64 64 32 32 YellowLeft1
+64 96 32 32 YellowUp1
+96 0 32 32 YellowRight2
+96 32 32 32 YellowDown2
+96 64 32 32 YellowLeft2
+96 96 32 32 YellowUp2
+128 0 32 32 PinkRight1
+128 32 32 32 PinkDown1
+128 64 32 32 PinkLeft1
+128 96 32 32 PinkUp1
+160 0 32 32 PinkRight2
+160 32 32 32 PinkDown2
+160 64 32 32 PinkLeft2
+160 96 32 32 PinkUp2
+192 0 32 32 GreenRight1
+192 32 32 32 GreenDown1
+192 64 32 32 GreenLeft1
+192 96 32 32 GreenUp1
+224 0 32 32 GreenRight2
+224 32 32 32 GreenDown2
+224 64 32 32 GreenLeft2
+224 96 32 32 GreenUp2
+256 0 32 32 PurpleRight1
+256 32 32 32 PurpleDown1
+256 64 32 32 PurpleLeft1
+256 96 32 32 PurpleUp1
+288 0 32 32 PurpleRight2
+288 32 32 32 PurpleDown2
+288 64 32 32 PurpleLeft2
+288 96 32 32 PurpleUp2
+320 0 32 32 PacRight1
+320 32 32 32 PacDown1
+320 64 32 32 PacLeft1
+320 96 32 32 PacUp1
+352 0 32 32 PacRight2
+352 32 32 32 PacDown2
+352 64 32 32 PacLeft2
+352 96 32 32 PacUp2
+384 0 32 32 BlueGhost1
+384 32 32 32 WhiteGhost1
+384 64 32 32 GhostEyes1
+384 96 32 32 EmptySquare
+416 0 32 32 BlueGhost2
+416 32 32 32 WhiteGhost2
+416 64 32 32 GhostEyes2
+416 96 32 32 GreySquare
